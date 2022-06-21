@@ -1,9 +1,9 @@
 version: '3.7'
 
 services:
-  minecraft:
-    image: ghcr.io/klauke-enterprises/paperspigot:1.19
-    container_name: minecraft
+  paper:
+    image: ghcr.io/klauke-enterprises/paper:1.19
+    container_name: paper
     stdin_open: true
     tty: true
     restart: always
@@ -12,10 +12,10 @@ services:
     ports:
       - 25565:25565
     volumes:
-      - minecraft-data:/opt/minecraft/data
+      - paper-data:/opt/minecraft/data
 
 volumes:
-  minecraft-data: {}
+  paper-data: {}
 
 networks:
   minecraft: {}
