@@ -41,8 +41,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           flavor: |
             latest=true
-            prefix=${{ format('{0}-', matrix.version.version) }},onlatest=true
-            suffix=
+            prefix=test
+            suffix=toor
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
