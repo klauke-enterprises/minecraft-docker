@@ -8,52 +8,48 @@ The easiest way for a quick start would be:
 ```bash
 docker run -it \
     -p 25565:25565 \
-    -v ~/minecraft/config:/opt/minecraft/config \
-    -v ~/minecraft/worlds:/opt/minecraft/worlds \
-    -v ~/minecraft/plugins:/opt/minecraft/plugins \
     -v ~/minecraft/data:/opt/minecraft/data \
-    -v ~/minecraft/logs:/opt/minecraft/logs \
-    felixklauke/paperspigot:1.16.5
+    klauke-enterprises/paperspigot:1.16.5
 ```
 
 # Tags and Versions
 The Docker images are tagged for their Minecraft versions. These versions are currently available:
-- `felixklauke/paperspigot:1.16.5`
-- `felixklauke/paperspigot:1.16.4`
-- `felixklauke/paperspigot:1.16.3`
-- `felixklauke/paperspigot:1.16.2`
-- `felixklauke/paperspigot:1.16.1` 
-- `felixklauke/paperspigot:1.15.2` 
-- `felixklauke/paperspigot:1.15.1` 
-- `felixklauke/paperspigot:1.15` 
-- `felixklauke/paperspigot:1.14.4` 
-- `felixklauke/paperspigot:1.14.3` 
-- `felixklauke/paperspigot:1.14.2` 
-- `felixklauke/paperspigot:1.14.1` 
-- `felixklauke/paperspigot:1.14`
-- `felixklauke/paperspigot:1.13.2` 
-- `felixklauke/paperspigot:1.13.1`
-- `felixklauke/paperspigot:1.13`
-- `felixklauke/paperspigot:1.12.2`
-- `felixklauke/paperspigot:1.12.1`
-- `felixklauke/paperspigot:1.12`
-- `felixklauke/paperspigot:1.11.2`
-- `felixklauke/paperspigot:1.10.2`
-- `felixklauke/paperspigot:1.9.4`
-- `felixklauke/paperspigot:1.8.8`
+- `ghcr.io/klauke-enterprises/paperspigot:1.16.5`
+- `ghcr.io/klauke-enterprises/paperspigot:1.16.4`
+- `ghcr.io/klauke-enterprises/paperspigot:1.16.3`
+- `ghcr.io/klauke-enterprises/paperspigot:1.16.2`
+- `ghcr.io/klauke-enterprises/paperspigot:1.16.1` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.15.2` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.15.1` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.15` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.14.4` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.14.3` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.14.2` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.14.1` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.14`
+- `ghcr.io/klauke-enterprises/paperspigot:1.13.2` 
+- `ghcr.io/klauke-enterprises/paperspigot:1.13.1`
+- `ghcr.io/klauke-enterprises/paperspigot:1.13`
+- `ghcr.io/klauke-enterprises/paperspigot:1.12.2`
+- `ghcr.io/klauke-enterprises/paperspigot:1.12.1`
+- `ghcr.io/klauke-enterprises/paperspigot:1.12`
+- `ghcr.io/klauke-enterprises/paperspigot:1.11.2`
+- `ghcr.io/klauke-enterprises/paperspigot:1.10.2`
+- `ghcr.io/klauke-enterprises/paperspigot:1.9.4`
+- `ghcr.io/klauke-enterprises/paperspigot:1.8.8`
 
 The specific images are updated by hand. The 1.x-latest images will update at nightly builds and will always
 use the latest build.
 
 # Volumes
-There are five volumes which are used for:
+There is one volume which is seperated and used for:
 - Worlds
 - Plugins
-- Config files (paper.yml, bukkit.yml, spigot.yml, server.properties, commands.yml)
-- Data (banned-ips.json, banned-players.json, help.yml, ops.json, permissions.yml, whitelist.json)
+- Config files (paper.yml, bukkit.yml, spigot.yml, server.properties, commands.yml,
+ banned-ips.json, banned-players.json, help.yml, ops.json, permissions.yml, whitelist.json)
 - Logs
 
-You can find the mount locations in `docker-compose.yml`.
+You can find the mount location in `docker-compose.yml`.
 
 # docker-compose.yml
 ## Bind Mounts
@@ -61,11 +57,11 @@ This method is recommended if you have an already existing server which you wish
 the way bind mounts behave.](https://docs.docker.com/storage/bind-mounts/#mount-into-a-non-empty-directory-on-the-container)
 You can add this simple entry to your docker-compose.yml when using bind mounts:
 ```yaml
-version: '3.7'
+version: '3.9'
 
 services:
   minecraft:
-    image: felixklauke/paperspigot:1.16.5
+    image: ghcr.io/klauke-enterprises/paperspigot:1.16.5
     container_name: minecraft
     stdin_open: true
     tty: true
@@ -75,11 +71,7 @@ services:
     ports:
       - 25565:25565
     volumes:
-      - ./config:/opt/minecraft/config
-      - ./worlds:/opt/minecraft/worlds
-      - ./plugins:/opt/minecraft/plugins
       - ./data:/opt/minecraft/data
-      - ./logs:/opt/minecraft/logs
 
 networks:
   minecraft: {}
@@ -89,11 +81,11 @@ networks:
 ## Volumes
 If you want to use explicit volumes, you can use this:
 ```yaml 
-version: '3.7'
+version: '3.9'
 
 services:
   minecraft:
-    image: felixklauke/paperspigot:1.16.5
+    image: ghcr.io/klauke-enterprises/paperspigot:1.16.5
     container_name: minecraft
     stdin_open: true
     tty: true
@@ -103,18 +95,10 @@ services:
     ports:
       - 25565:25565
     volumes:
-      - minecraft-config:/opt/minecraft/config
-      - minecraft-worlds:/opt/minecraft/worlds
-      - minecraft-plugins:/opt/minecraft/plugins
       - minecraft-data:/opt/minecraft/data
-      - minecraft-logs:/opt/minecraft/logs
 
 volumes:
-  minecraft-config: {}
-  minecraft-worlds: {}
-  minecraft-plugins: {}
-  minecraft-data: {}
-  minecraft-logs: {}
+  minecraft-data: 
 
 networks:
   minecraft: {}
