@@ -61,7 +61,7 @@ jobs:
           - {version: 1.12, build: 1169, download: 'paper-1.12-1169.jar'}
           - {version: 1.12.1, build: 1204, download: 'paper-1.12.1-1204.jar'}
           - {version: 1.12.2, build: 1620, download: 'paper-1.12.2-1620.jar'}
-          - {version: 1.13-pre7, build: 12, download: 'paper-1.3-pre7-12.jar'}
+          - {version: 1.13-pre7, build: 12, download: 'paper-1.13-pre7-12.jar'}
           - {version: 1.13, build: 173, download: 'paper-1.13-173.jar'}
           - {version: 1.13.1, build: 386, download: 'paper-1.13.1-386.jar'}
           - {version: 1.13.2, build: 657, download: 'paper-1.13.2-657.jar'}
