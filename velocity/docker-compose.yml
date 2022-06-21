@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  velocity:
+    image: ghcr.io/klauke-enterprises/velocity:3.1.1
+    container_name: velocity
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      - minecraft
+    ports:
+      - 25565:25565
+    volumes:
+      - velocity-data:/opt/minecraft/data
+
+volumes:
+  velocity-data: {}
+
+networks:
+  minecraft: {}
