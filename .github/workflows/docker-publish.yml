@@ -50,7 +50,7 @@ jobs:
             BUILD_VERSION=${{ matrix.version.build }}
             DOWNLOAD_VERSION=${{ matrix.version.download }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ format('{0}-{1}-TT', steps.meta.outputs.tags, steps.meta.outputs.labels) }}
+          tags: ${{ format('{0}-{1}-TTTT', steps.meta.outputs.tags, steps.meta.outputs.labels) }}
     strategy:
       matrix:
         version:
