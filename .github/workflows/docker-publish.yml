@@ -83,4 +83,4 @@ jobs:
           - {version: 1.18, build: 66, download: 'paper-1.18-66.jar'}
           - {version: 1.18.1, build: 216, download: 'paper-1.18.1-216.jar'}
           - {version: 1.18.2, build: 386, download: 'paper-1.18.2-386.jar'}
-          - {version: 1.19, build: 34, download: 'paper-1.19-34.jar'}
+          - {version: 1.19, build: 31, download: 'paper-1.19-31.jar'}
