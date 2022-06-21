@@ -14,29 +14,29 @@ docker run -it \
 
 # Tags and Versions
 The Docker images are tagged for their Minecraft versions. These versions are currently available:
-- `ghcr.io/klauke-enterprises/paperspigot:1.16.5`
-- `ghcr.io/klauke-enterprises/paperspigot:1.16.4`
-- `ghcr.io/klauke-enterprises/paperspigot:1.16.3`
-- `ghcr.io/klauke-enterprises/paperspigot:1.16.2`
-- `ghcr.io/klauke-enterprises/paperspigot:1.16.1` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.15.2` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.15.1` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.15` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.14.4` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.14.3` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.14.2` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.14.1` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.14`
-- `ghcr.io/klauke-enterprises/paperspigot:1.13.2` 
-- `ghcr.io/klauke-enterprises/paperspigot:1.13.1`
-- `ghcr.io/klauke-enterprises/paperspigot:1.13`
-- `ghcr.io/klauke-enterprises/paperspigot:1.12.2`
-- `ghcr.io/klauke-enterprises/paperspigot:1.12.1`
-- `ghcr.io/klauke-enterprises/paperspigot:1.12`
-- `ghcr.io/klauke-enterprises/paperspigot:1.11.2`
-- `ghcr.io/klauke-enterprises/paperspigot:1.10.2`
-- `ghcr.io/klauke-enterprises/paperspigot:1.9.4`
-- `ghcr.io/klauke-enterprises/paperspigot:1.8.8`
+- `ghcr.io/klauke-enterprises/paper-docker:1.16.5`
+- `ghcr.io/klauke-enterprises/paper-docker:1.16.4`
+- `ghcr.io/klauke-enterprises/paper-docker:1.16.3`
+- `ghcr.io/klauke-enterprises/paper-docker:1.16.2`
+- `ghcr.io/klauke-enterprises/paper-docker:1.16.1` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.15.2` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.15.1` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.15` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.14.4` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.14.3` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.14.2` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.14.1` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.14`
+- `ghcr.io/klauke-enterprises/paper-docker:1.13.2` 
+- `ghcr.io/klauke-enterprises/paper-docker:1.13.1`
+- `ghcr.io/klauke-enterprises/paper-docker:1.13`
+- `ghcr.io/klauke-enterprises/paper-docker:1.12.2`
+- `ghcr.io/klauke-enterprises/paper-docker:1.12.1`
+- `ghcr.io/klauke-enterprises/paper-docker:1.12`
+- `ghcr.io/klauke-enterprises/paper-docker:1.11.2`
+- `ghcr.io/klauke-enterprises/paper-docker:1.10.2`
+- `ghcr.io/klauke-enterprises/paper-docker:1.9.4`
+- `ghcr.io/klauke-enterprises/paper-docker:1.8.8`
 
 The specific images are updated by hand. The 1.x-latest images will update at nightly builds and will always
 use the latest build.
@@ -61,7 +61,7 @@ version: '3.9'
 
 services:
   minecraft:
-    image: ghcr.io/klauke-enterprises/paperspigot:1.16.5
+    image: ghcr.io/klauke-enterprises/paper-docker:1.16.5
     container_name: minecraft
     stdin_open: true
     tty: true
@@ -85,7 +85,7 @@ version: '3.9'
 
 services:
   minecraft:
-    image: ghcr.io/klauke-enterprises/paperspigot:1.16.5
+    image: ghcr.io/klauke-enterprises/paper-docker:1.16.5
     container_name: minecraft
     stdin_open: true
     tty: true
