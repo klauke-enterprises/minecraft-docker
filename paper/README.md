@@ -8,7 +8,7 @@ The easiest way for a quick start would be:
 ```bash
 docker run -it \
     -p 25565:25565 \
-    -v ~/minecraft/data:/opt/minecraft/data \
+    -v ~/paper/data:/opt/minecraft/data \
     klauke-enterprises/paperspigot:1.16.5
 ```
 
@@ -60,9 +60,9 @@ You can add this simple entry to your docker-compose.yml when using bind mounts:
 version: '3.9'
 
 services:
-  minecraft:
-    image: ghcr.io/klauke-enterprises/paper-docker:1.16.5
-    container_name: minecraft
+  paper:
+    image: ghcr.io/klauke-enterprises/paper:1.19
+    container_name: paper
     stdin_open: true
     tty: true
     restart: always
@@ -84,9 +84,9 @@ If you want to use explicit volumes, you can use this:
 version: '3.9'
 
 services:
-  minecraft:
-    image: ghcr.io/klauke-enterprises/paper-docker:1.16.5
-    container_name: minecraft
+  paper:
+    image: ghcr.io/klauke-enterprises/paper:1.19
+    container_name: paper
     stdin_open: true
     tty: true
     restart: always
@@ -95,10 +95,10 @@ services:
     ports:
       - 25565:25565
     volumes:
-      - minecraft-data:/opt/minecraft/data
+      - paper-data:/opt/minecraft/data
 
 volumes:
-  minecraft-data: 
+  paper-data: 
 
 networks:
   minecraft: {}
