@@ -51,11 +51,11 @@ jobs:
             BUILD_VERSION=${{ matrix.version.build }}
             DOWNLOAD_VERSION=${{ matrix.version.download }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ format('{0}-{1}', env.TEST_TAG, matrix.version.version) }}
+          tags: ${{ env.TEST_TAG }}-${{ matrix.version.version }}
       - name: Test
         run: |
-          docker run --rm ${{ format('{0}-{1}', env.TEST_TAG, matrix.version.version) }}
-          (sleep 1; docker stop ${{ format('{0}-{1}', env.TEST_TAG, matrix.version.version) }})
+          docker run --rm ${{ env.TEST_TAG }}-${{ matrix.version.version }}
+          (sleep 1; docker stop ${{ env.TEST_TAG }}-${{ matrix.version.version }})
       - name: Build and Push
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         if: ${{ github.event_name != 'push' }}
@@ -68,7 +68,7 @@ jobs:
             BUILD_VERSION=${{ matrix.version.build }}
             DOWNLOAD_VERSION=${{ matrix.version.download }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ format('{0}/{1}/paper:{2}-{3}', env.REGISTRY, github.repository_owner, matrix.version.version, steps.meta.outputs.version) }}
+          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/paper:${{ matrix.version.version }}-${{ steps.meta.outputs.version }}
     strategy:
       matrix:
         version:
