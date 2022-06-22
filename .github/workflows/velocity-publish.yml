@@ -55,9 +55,9 @@ jobs:
     strategy:
       matrix:
         version:
-          - {java: 16, version: 3.1.2-SNAPSHOT, build: 155, download: 'velocity-3.1.2-SNAPSHOT-155.jar'}
-          - {java: 16, version: 3.1.1-SNAPSHOT, build: 97, download: 'velocity-3.1.1-SNAPSHOT-97.jar'}
-          - {java: 16, version: 3.1.1, build: 102, download: 'velocity-3.1.1-102.jar'}
+          - {java: 18, version: 3.1.2-SNAPSHOT, build: 155, download: 'velocity-3.1.2-SNAPSHOT-155.jar'}
+          - {java: 18, version: 3.1.1-SNAPSHOT, build: 97, download: 'velocity-3.1.1-SNAPSHOT-97.jar'}
+          - {java: 18, version: 3.1.1, build: 102, download: 'velocity-3.1.1-102.jar'}
           - {java: 16,version: 3.1.0, build: 95, download: 'velocity-3.1.0-95.jar'}
           - {java: 11, version: 1.1.9, build: 447, download: 'velocity-1.1.9-447.jar'}
           - {java: 11, version: 1.0.10, build: 245, download: 'velocity-1.0.10-245.jar'}

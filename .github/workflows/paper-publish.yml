@@ -81,7 +81,7 @@ jobs:
           - {java: 16, version: 1.16.5, build: 794, download: 'paper-1.16.5-794.jar'}
           - {java: 16, version: 1.17, build: 79, download: 'paper-1.17-79.jar'}
           - {java: 16, version: 1.17.1, build: 411, download: 'paper-1.17.1-411.jar'}
-          - {java: 17, version: 1.18, build: 66, download: 'paper-1.18-66.jar'}
-          - {java: 17, version: 1.18.1, build: 216, download: 'paper-1.18.1-216.jar'}
-          - {java: 17, version: 1.18.2, build: 386, download: 'paper-1.18.2-386.jar'}
-          - {java: 17, version: 1.19, build: 31, download: 'paper-1.19-31.jar'}
+          - {java: 18, version: 1.18, build: 66, download: 'paper-1.18-66.jar'}
+          - {java: 18, version: 1.18.1, build: 216, download: 'paper-1.18.1-216.jar'}
+          - {java: 18, version: 1.18.2, build: 386, download: 'paper-1.18.2-386.jar'}
+          - {java: 18, version: 1.19, build: 31, download: 'paper-1.19-31.jar'}
