@@ -70,7 +70,7 @@ RUN pip install mcstatus
 RUN apt-get update && apt-get install htop
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=90s \
-  CMD mcstatus localhost:$( cat $PROPERTIES_LOCATION | grep "server-port" | cut -d'=' -f2 ) ping
+  CMD mcstatus localhost:25565 ping
 
 
 EXPOSE 25565

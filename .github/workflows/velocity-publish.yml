@@ -1,0 +1,63 @@
+name: Publish velocity
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Log in
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ env.REGISTRY }}/${{ github.repository }}
+      - name: Build and Push
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          context: ./velocity
+          push: true
+          build-args: |
+            JAVA_VERSION=${{ matrix.version.java }}
+            VELOCITY_VERSION=${{ matrix.version.version }}
+            BUILD_VERSION=${{ matrix.version.build }}
+            DOWNLOAD_VERSION=${{ matrix.version.download }}
+          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/velocity:${{ matrix.version.version }}
+    strategy:
+      matrix:
+        version:
+          - {java: 18, version: 3.1.2-SNAPSHOT, build: 155, download: 'velocity-3.1.2-SNAPSHOT-155.jar'}
+          - {java: 18, version: 3.1.1-SNAPSHOT, build: 97, download: 'velocity-3.1.1-SNAPSHOT-97.jar'}
+          - {java: 18, version: 3.1.1, build: 102, download: 'velocity-3.1.1-102.jar'}
+          - {java: 16,version: 3.1.0, build: 95, download: 'velocity-3.1.0-95.jar'}
+          - {java: 11, version: 1.1.9, build: 447, download: 'velocity-1.1.9-447.jar'}
+          - {java: 11, version: 1.0.10, build: 245, download: 'velocity-1.0.10-245.jar'}

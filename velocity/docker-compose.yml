@@ -1,18 +1,6 @@
 version: '3.7'
 
 services:
-  paper:
-    image: ghcr.io/klauke-enterprises/paper:1.19
-    container_name: paper
-    stdin_open: true
-    tty: true
-    restart: always
-    networks:
-      - minecraft
-    ports:
-      - 25566:25565
-    volumes:
-      - paper-data:/opt/minecraft/data
   velocity:
     image: ghcr.io/klauke-enterprises/velocity:3.1.1
     container_name: velocity
@@ -27,7 +15,6 @@ services:
       - velocity-data:/opt/minecraft/data
 
 volumes:
-  paper-data: {}
   velocity-data: {}
 
 networks:
