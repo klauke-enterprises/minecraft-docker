@@ -16,7 +16,6 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  TEST_TAG: ${{ github.repository_owner }}/paper:test
 
 jobs:
   build-and-push-image:
@@ -40,22 +39,6 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-      - name: Build
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-        with:
-          context: ./paper
-          load: true
-          build-args: |
-            JAVA_VERSION=${{ matrix.version.java }}
-            PAPER_VERSION=${{ matrix.version.version }}
-            BUILD_VERSION=${{ matrix.version.build }}
-            DOWNLOAD_VERSION=${{ matrix.version.download }}
-          labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ env.TEST_TAG }}-${{ matrix.version.version }}
-      - name: Test
-        run: |
-          docker run --rm -d ${{ env.TEST_TAG }}-${{ matrix.version.version }} &&
-          (sleep 1; docker stop ${{ env.TEST_TAG }}-${{ matrix.version.version }})
       - name: Build and Push
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         if: ${{ github.event_name != 'pull_request' }}
