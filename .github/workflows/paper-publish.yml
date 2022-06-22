@@ -54,7 +54,7 @@ jobs:
           tags: ${{ env.TEST_TAG }}-${{ matrix.version.version }}
       - name: Test
         run: |
-          docker run --rm ${{ env.TEST_TAG }}-${{ matrix.version.version }}
+          docker run --rm ${{ env.TEST_TAG }}-${{ matrix.version.version }} &&
           (sleep 1; docker stop ${{ env.TEST_TAG }}-${{ matrix.version.version }})
       - name: Build and Push
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
