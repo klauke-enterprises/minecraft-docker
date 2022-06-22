@@ -67,13 +67,7 @@ jobs:
             BUILD_VERSION=${{ matrix.version.build }}
             DOWNLOAD_VERSION=${{ matrix.version.download }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ format(
-            '{0}/{1}/paper:{2}-{3}',
-            env.REGISTRY,
-            repository_owner,
-            matrix.version.version,
-            steps.meta.outputs.version
-          ) }}
+          tags: ${{ format('{0}/{1}/paper:{2}-{3}', env.REGISTRY, repository_owner, matrix.version.version, steps.meta.outputs.version) }}
     strategy:
       matrix:
         version:
