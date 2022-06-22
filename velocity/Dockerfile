@@ -44,7 +44,7 @@ RUN chmod +x ${MINECRAFT_PATH}/docker-entrypoint.sh
 RUN ln -s $PLUGINS_PATH $SERVER_PATH/plugins && \
     ln -s $LOGS_PATH $SERVER_PATH/logs && \
     ln -s $CONFIG_PATH/velocity.toml $SERVER_PATH/velocity.toml && \
-    ln -s $CONFIG_PATH/server-icon.png $SERVER_PATH/server-icon-png
+    ln -s $CONFIG_PATH/server-icon.png $SERVER_PATH/server-icon.png
 
 RUN mkdir -p ${SERVER_PATH} ${LOGS_PATH} ${CONFIG_PATH} ${PLUGINS_PATH}
 
