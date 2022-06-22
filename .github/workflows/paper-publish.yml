@@ -43,7 +43,7 @@ jobs:
       - name: Build
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: .
+          context: ./paper
           load: true
           build-args: |
             PAPER_VERSION=${{ matrix.version.version }}
@@ -58,7 +58,7 @@ jobs:
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         if: ${{ github.event_name != 'push' }}
         with:
-          context: .
+          context: ./paper
           push: true
           build-args: | 
             PAPER_VERSION=${{ matrix.version.version }}
