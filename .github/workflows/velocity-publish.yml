@@ -51,7 +51,7 @@ jobs:
             BUILD_VERSION=${{ matrix.version.build }}
             DOWNLOAD_VERSION=${{ matrix.version.download }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/velocity:${{ matrix.version.version }}-${{ steps.meta.outputs.version }}
+          tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/velocity:${{ matrix.version.version }}
     strategy:
       matrix:
         version:
