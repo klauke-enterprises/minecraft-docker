@@ -48,7 +48,7 @@ jobs:
           context: .
           push: true
           build-args: | 
-            PAPER_VERSION=${{ matrix.version.version }}
+            VELOCITY_VERSION=${{ matrix.version.version }}
             BUILD_VERSION=${{ matrix.version.build }}
             DOWNLOAD_VERSION=${{ matrix.version.download }}
           labels: ${{ steps.meta.outputs.labels }}
