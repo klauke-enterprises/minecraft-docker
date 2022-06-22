@@ -1,4 +1,4 @@
-# paperspigot-docker
+# velocity-docker
 Easy to use and clean Docker image for running Velocity servers in Docker containers using OpenJDK. 
 
 You may also be interested in [waterfall-docker](https://github.com/klauke-enterprises/minecraft-docker/tree/dev/waterfall) 
@@ -42,9 +42,9 @@ You can add this simple entry to your docker-compose.yml when using bind mounts:
 version: '3.9'
 
 services:
-  minecraft:
-    image: ghcr.io/klauke-enterprises/paper-docker:1.16.5
-    container_name: minecraft
+  velocity:
+    image: ghcr.io/klauke-enterprises/velocity:3.1.1
+    container_name: velocity
     stdin_open: true
     tty: true
     restart: always
@@ -66,9 +66,9 @@ If you want to use explicit volumes, you can use this:
 version: '3.9'
 
 services:
-  minecraft:
-    image: ghcr.io/klauke-enterprises/paper-docker:1.16.5
-    container_name: minecraft
+  velocity:
+    image: ghcr.io/klauke-enterprises/velocity:3.1.1
+    container_name: velocity
     stdin_open: true
     tty: true
     restart: always
@@ -77,10 +77,10 @@ services:
     ports:
       - 25565:25565
     volumes:
-      - minecraft-data:/opt/minecraft/data
+      - velocity-data:/opt/minecraft/data
 
 volumes:
-  minecraft-data: 
+  velocity-data: 
 
 networks:
   minecraft: {}

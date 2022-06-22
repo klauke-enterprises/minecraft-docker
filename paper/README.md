@@ -9,34 +9,40 @@ The easiest way for a quick start would be:
 docker run -it \
     -p 25565:25565 \
     -v ~/paper/data:/opt/minecraft/data \
-    klauke-enterprises/paperspigot:1.16.5
+    klauke-enterprises/paper:1.16.5
 ```
 
 # Tags and Versions
 The Docker images are tagged for their Minecraft versions. These versions are currently available:
-- `ghcr.io/klauke-enterprises/paper-docker:1.16.5`
-- `ghcr.io/klauke-enterprises/paper-docker:1.16.4`
-- `ghcr.io/klauke-enterprises/paper-docker:1.16.3`
-- `ghcr.io/klauke-enterprises/paper-docker:1.16.2`
-- `ghcr.io/klauke-enterprises/paper-docker:1.16.1` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.15.2` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.15.1` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.15` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.14.4` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.14.3` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.14.2` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.14.1` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.14`
-- `ghcr.io/klauke-enterprises/paper-docker:1.13.2` 
-- `ghcr.io/klauke-enterprises/paper-docker:1.13.1`
-- `ghcr.io/klauke-enterprises/paper-docker:1.13`
-- `ghcr.io/klauke-enterprises/paper-docker:1.12.2`
-- `ghcr.io/klauke-enterprises/paper-docker:1.12.1`
-- `ghcr.io/klauke-enterprises/paper-docker:1.12`
-- `ghcr.io/klauke-enterprises/paper-docker:1.11.2`
-- `ghcr.io/klauke-enterprises/paper-docker:1.10.2`
-- `ghcr.io/klauke-enterprises/paper-docker:1.9.4`
-- `ghcr.io/klauke-enterprises/paper-docker:1.8.8`
+- `ghcr.io/klauke-enterprises/paper:1.19`
+- `ghcr.io/klauke-enterprises/paper:1.18.2`
+- `ghcr.io/klauke-enterprises/paper:1.18.1`
+- `ghcr.io/klauke-enterprises/paper:1.18`
+- `ghcr.io/klauke-enterprises/paper:1.17.1`
+- `ghcr.io/klauke-enterprises/paper:1.17`
+- `ghcr.io/klauke-enterprises/paper:1.16.5`
+- `ghcr.io/klauke-enterprises/paper:1.16.4`
+- `ghcr.io/klauke-enterprises/paper:1.16.3`
+- `ghcr.io/klauke-enterprises/paper:1.16.2`
+- `ghcr.io/klauke-enterprises/paper:1.16.1` 
+- `ghcr.io/klauke-enterprises/paper:1.15.2` 
+- `ghcr.io/klauke-enterprises/paper:1.15.1` 
+- `ghcr.io/klauke-enterprises/paper:1.15` 
+- `ghcr.io/klauke-enterprises/paper:1.14.4` 
+- `ghcr.io/klauke-enterprises/paper:1.14.3` 
+- `ghcr.io/klauke-enterprises/paper:1.14.2` 
+- `ghcr.io/klauke-enterprises/paper:1.14.1` 
+- `ghcr.io/klauke-enterprises/paper:1.14`
+- `ghcr.io/klauke-enterprises/paper:1.13.2` 
+- `ghcr.io/klauke-enterprises/paper:1.13.1`
+- `ghcr.io/klauke-enterprises/paper:1.13`
+- `ghcr.io/klauke-enterprises/paper:1.12.2`
+- `ghcr.io/klauke-enterprises/paper:1.12.1`
+- `ghcr.io/klauke-enterprises/paper:1.12`
+- `ghcr.io/klauke-enterprises/paper:1.11.2`
+- `ghcr.io/klauke-enterprises/paper:1.10.2`
+- `ghcr.io/klauke-enterprises/paper:1.9.4`
+- `ghcr.io/klauke-enterprises/paper:1.8.8`
 
 The specific images are updated by hand. The 1.x-latest images will update at nightly builds and will always
 use the latest build.
