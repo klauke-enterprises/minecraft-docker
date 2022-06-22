@@ -43,7 +43,7 @@ RUN chmod +x ${MINECRAFT_PATH}/docker-entrypoint.sh
 # Create symlink for plugin volume as hotfix for some plugins who hard code their directories
 RUN ln -s $PLUGINS_PATH $SERVER_PATH/plugins && \
     ln -s $LOGS_PATH $SERVER_PATH/logs && \
-    ln -s $CONFIG_PATH/velocity.tomly $SERVER_PATH/velocity.toml && \
+    ln -s $CONFIG_PATH/velocity.toml $SERVER_PATH/velocity.toml && \
     ln -s $CONFIG_PATH/server-icon.png $SERVER_PATH/server-icon-png
 
 RUN mkdir -p ${SERVER_PATH} ${LOGS_PATH} ${CONFIG_PATH} ${PLUGINS_PATH}
