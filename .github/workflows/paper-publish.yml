@@ -16,7 +16,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  TEST_TAG: ${{ env.REGISTRY}}/${{ github.repository_owner }}/paper:test
+  TEST_TAG: ${{ github.repository_owner }}/paper:test
 
 jobs:
   build-and-push-image:
