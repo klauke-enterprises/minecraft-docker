@@ -58,6 +58,7 @@ jobs:
           docker run --rm $ {{ format('{0}-{1}', env.TEST_TAG, matrix.version.version) }}
       - name: Build and Push
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        if: ${{ github.event_name != 'push' }}
         with:
           context: .
           push: true
