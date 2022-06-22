@@ -68,7 +68,7 @@ jobs:
             DOWNLOAD_VERSION=${{ matrix.version.download }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ format(
-            '{0}/{1}/paper:{3}-{4}',
+            '{0}/{1}/paper:{2}-{3}',
             env.REGISTRY,
             repository_owner,
             matrix.version.version,
